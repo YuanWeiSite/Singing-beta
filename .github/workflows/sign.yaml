@@ -1,0 +1,35 @@
+name: Sign files
+
+on:
+  workflow_dispatch:
+
+jobs:
+  sign-files:
+    name: Sign files
+    runs-on: windows-latest
+
+    steps:
+      - name: ls
+        run: ls
+      
+      - name: pwd
+        run: pwd
+
+      - name: Upload files
+        uses: boasihq/interactive-inputs@v2
+        with:
+          ngrok-authtoken: ${{ secrets.NGROK_AUTHTOKEN }}
+          notifier-slack-enabled: "false"
+          notifier-discord-enabled: "false"
+          timeout: 180
+          interactive:
+            fields:
+              - label: requested-files # Required
+                properties:
+                  type: file # Required
+
+      - name: ls  
+        run: ls
+      
+      - name: pwd
+        run: pwd
