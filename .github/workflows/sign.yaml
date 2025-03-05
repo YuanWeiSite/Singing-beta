@@ -22,11 +22,11 @@ jobs:
           notifier-slack-enabled: "false"
           notifier-discord-enabled: "false"
           timeout: 180
-          interactive:
+          interactive: |
             fields:
-              - label: requested-files
-                properties:
-                  type: file
+            - label: requested-files
+              properties:
+                type: file
 
       - name: ls  
         run: ls
