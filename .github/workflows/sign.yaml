@@ -23,7 +23,7 @@ jobs:
           notifier-discord-enabled: "false"
           timeout: 180
           interactive:
-            fields:
+            fields: |
               - label: requested-files # Required
                 properties:
                   type: file # Required
