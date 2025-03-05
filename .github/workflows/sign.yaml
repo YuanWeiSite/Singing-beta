@@ -24,9 +24,9 @@ jobs:
           timeout: 180
           interactive:
             fields: |
-              - label: requested-files # Required
+              - label: requested-files
                 properties:
-                  type: file # Required
+                  type: file
 
       - name: ls  
         run: ls
